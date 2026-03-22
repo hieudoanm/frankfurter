@@ -23,8 +23,10 @@ type FrankfurterResponse struct {
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "cc",
-	Short: "Frankfurter CLI",
-	Long:  "Frankfurter CLI",
+	Short: "Frankfurter CLI application (finance tools)",
+	Long:  `The frankfurter CLI application is a comprehensive backend utility belonging to the finance suite of tools.
+
+Use this root executable to manage configuring, running, and interacting with all frankfurter-related operations securely and efficiently from your terminal.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		from, _ := cmd.Flags().GetString("from")
 		to, _ := cmd.Flags().GetString("to")
