@@ -11,9 +11,7 @@
 ## 📦 Installation
 
 ```bash
-curl -fsSL https://github.com/hieudoanm/frankfurter/raw/refs/heads/master/packages/cli/bin/frankfurter -o frankfurter
-chmod +x frankfurter
-sudo mv frankfurter /usr/local/bin/
+curl -fsSL https://raw.githubusercontent.com/hieudoanm/frankfurter/master/packages/cli/scripts/install.sh | bash
 ```
 
 ## 🚀 Usage
