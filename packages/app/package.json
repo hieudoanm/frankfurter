@@ -23,13 +23,12 @@
     "dev": "next dev --turbopack && tauri dev",
     "pretest": "jest --clearCache",
     "test": "jest",
-    "prebuild": "rimraf .next ../../docs && pnpm ts-node ./scripts/frankfurter.ts",
+    "prebuild": "rimraf .next ../../docs && pnpm ts-node ./scripts/currency.ts",
     "build": "next build --turbopack",
     "postbuild": "touch ../../docs/.nojekyll",
     "build:tauri": "tauri build",
     "prestart": "kill-port 3000 || true",
-    "start": "next start",
-    "docs": "rimraf docs && docsify init ./docs && touch ./docs/.nojekyll"
+    "start": "next start"
   },
   "dependencies": {
     "@capacitor/android": "8.2.0",

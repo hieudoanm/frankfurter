@@ -1,4 +1,4 @@
-import frankfurter from '@frankfurter/json/frankfurter.json';
+import frankfurter from '@frankfurter/json/currency.json';
 import { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 
@@ -242,13 +242,15 @@ const AppPage: NextPage = () => {
                   {CURRENCIES.filter((c) => c !== from).map((currency) => {
                     const rate = convert(1, from, currency);
                     const convertedAmt =
-                      converted !== null
-                        ? convert(
-                            converted === 0 ? 1 : parseFloat(amount) || 1,
+                      converted === null
+                        ? null
+                        : convert(
+                            converted === 0
+                              ? 1
+                              : Number.parseFloat(amount) || 1,
                             from,
                             currency
-                          )
-                        : null;
+                          );
                     const isTarget = currency === to;
                     return (
                       <tr
@@ -260,7 +262,7 @@ const AppPage: NextPage = () => {
                           </span>
                         </td>
                         <td className="text-base-content/70 text-xs">
-                          {CURRENCY_NAMES[currency]}
+                          {CURRENCY_NAMES[currency] ?? ''}
                         </td>
                         <td className="text-right text-sm tabular-nums">
                           {rate.toLocaleString(undefined, {
@@ -269,12 +271,12 @@ const AppPage: NextPage = () => {
                           })}
                         </td>
                         <td className="text-primary text-right text-sm tabular-nums">
-                          {convertedAmt !== null
-                            ? convertedAmt.toLocaleString(undefined, {
+                          {convertedAmt === null
+                            ? '—'
+                            : convertedAmt.toLocaleString(undefined, {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
-                              })
-                            : '—'}
+                              })}
                         </td>
                       </tr>
                     );
