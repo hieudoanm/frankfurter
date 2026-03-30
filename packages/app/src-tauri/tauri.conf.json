@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "Frankfurter",
+  "productName": "frankfurter",
   "version": "0.0.1",
   "identifier": "io.github.hieudoanm.frankfurter",
   "build": {
